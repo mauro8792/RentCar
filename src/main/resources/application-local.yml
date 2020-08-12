@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/city_driver
+    username: postgres
+    password: 211914
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  jackson:
+    time-zone: GMT-3
+  mvc:
+    locale: es
+    locale-resolver: fixed
+
+flyway:
+  enabled: true
+  baseline-version: 1
+  schemas: public
+  locations: classpath:db/migration
+  sql-migration-suffixes: .sql
+  baseline-on-migrate: true
+  sql-migration-prefix: V
